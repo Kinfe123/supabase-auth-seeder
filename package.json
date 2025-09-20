@@ -1,7 +1,6 @@
 {
   "name": "supabase-auth-seeder",
   "version": "1.0.0",
-  "description": "Efficient seeding solution for 7 million auth users in Supabase",
   "main": "src/index.ts",
   "scripts": {
     "seed": "tsx src/index.ts",
