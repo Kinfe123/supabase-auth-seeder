@@ -1,0 +1,29 @@
+{
+  "name": "supabase-auth-seeder",
+  "version": "1.0.0",
+  "description": "Efficient seeding solution for 7 million auth users in Supabase",
+  "main": "src/index.ts",
+  "scripts": {
+    "seed": "tsx src/index.ts",
+    "seed:batch": "tsx src/batch-seeder.ts",
+    "seed:conservative": "tsx src/conservative-seeder.ts",
+    "seed:small": "tsx src/index.ts --users=1000",
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": ["supabase", "seeding", "auth", "users"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
+    "dotenv": "^16.3.1",
+    "progress": "^2.0.3",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/progress": "^2.0.7",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  }
+}
