@@ -1,8 +1,29 @@
 ---
 title: "Installation"
-description: "How this docs app is structured."
+description: "Install and configure Supabase Auth Seeder."
 ---
 
 # Installation
 
-The docs runtime lives in this app and sync is driven by `docs.cloud.json` at the repo root.
+These setup steps are grounded in the current repository layout and package metadata.
+## Install Dependencies
+Run `bun install` from the repository root.
+## Configure Environment Variables
+Copy `env.example` into `.env` and fill in the required values before running the project.
+- `BATCH_SIZE` (default: `1000`)
+- `CONCURRENT_BATCHES` (default: `5`)
+- `DEBUG`
+- `DEFAULT_PASSWORD` (default: `password123`)
+- `EMAIL_DOMAIN` (default: `example.com`) - Optional: Custom domain for emails
+- `SUPABASE_SERVICE_ROLE_KEY` (default: `your_service_role_key`)
+- `SUPABASE_URL` (default: `your_supabase_project_url`) - Supabase Configuration
+- `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
+## Verify the Build or Runtime Command
+The most relevant command detected right now is `bun run seed`.
+## Current Script Inventory
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
