@@ -1,8 +1,25 @@
 ---
 title: "Quickstart"
-description: "Make your first docs edits."
+description: "Run Supabase Auth Seeder with the current scripts and configuration."
 ---
 
 # Quickstart
 
-Push code, let Cloud detect changes, and review draft docs pull requests.
+Use this page as the shortest path from clone to a working run.
+## Recommended First Run
+1. Install dependencies with `bun install`.
+2. Copy `env.example` to `.env` and set the required values.
+3. Run `bun run seed` to exercise the main workflow.
+## Useful Commands
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
+## Useful CLI Options
+- `--batch=NUMBER`: Override batch size
+- `--concurrent=N`: Override number of concurrent batches
+- `--debug`: Enable debug logging
+- `--help`
+- `--users=NUMBER`: Override total number of users to seed
