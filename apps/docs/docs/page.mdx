@@ -1,0 +1,37 @@
+---
+title: "Supabase Auth Seeder"
+description: "Overview for Supabase Auth Seeder."
+---
+
+# Supabase Auth Seeder
+
+A CLI for seeding auth users into Supabase.
+## What We Observed
+- Project type: `cli`
+- Package name: `supabase-auth-seeder`
+- Source entrypoints: `src/index.ts`
+- Bootstrap evidence: `README.md`, `package.json`, `env.example`, `src/index.ts`
+## Available Commands
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
+## Configuration Surface
+- `BATCH_SIZE` (default: `1000`)
+- `CONCURRENT_BATCHES` (default: `5`)
+- `DEBUG`
+- `DEFAULT_PASSWORD` (default: `password123`)
+- `EMAIL_DOMAIN` (default: `example.com`) - Optional: Custom domain for emails
+- `SUPABASE_SERVICE_ROLE_KEY` (default: `your_service_role_key`)
+- `SUPABASE_URL` (default: `your_supabase_project_url`) - Supabase Configuration
+- `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
+## Named Exports
+No named exports were detected from the current TypeScript or JavaScript source files.
+## CLI Options
+- `--batch=NUMBER`: Override batch size
+- `--concurrent=N`: Override number of concurrent batches
+- `--debug`: Enable debug logging
+- `--help`
+- `--users=NUMBER`: Override total number of users to seed
