@@ -41,14 +41,11 @@ Use flags to override defaults for a specific run. Prefer the default script fir
 - Start with the smallest safe command or script before increasing scale.
 - Use `--help` when available to confirm the flags supported by the current version.
 - Check the command output or downstream service to confirm the expected side effect happened.
-## Maintainer Reference
-The sections above are the reader-facing explanation. Use these references only when you need to verify the source of a claim or update the implementation behind the page.
+## Source Reference
+Use these links when you need to verify behavior, update examples, or trace a public name back to the code that owns it.
 
-### Implementation Map
-- `src/index.ts` - Evidence file that contributes to the implementation understanding for this page.
+### Key Files
+- `src/index.ts` - Repository file related to this page.
 
-### Source Details
+### Public Names and Routes
 - `src/index.ts`: language TypeScript; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEBUG`, `TOTAL_USERS`; flags `--batch`, `--batch=NUMBER`, `--concurrent`, `--concurrent=N`, `--debug`, `--help`
-
-### Evidence
-- `src/index.ts`

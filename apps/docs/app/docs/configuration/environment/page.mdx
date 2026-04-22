@@ -10,7 +10,7 @@ The repository reads environment variables or provides environment example files
 ## What This Is
 Environment variable documentation explains which runtime values the project expects, where those values are read, what each variable controls, and what developers should verify before running previews, workers, or production deployments.
 ## Why It Matters
-Environment Variables matters because it is part of how Supabase Auth Seeder turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+Environment Variables matters because it is part of how Supabase Auth Seeder turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses code-level details as supporting context.
 ## Core Concepts
 - environment variables
 - runtime secrets
@@ -30,14 +30,14 @@ For Supabase Auth Seeder, configuration usually answers practical questions: whi
 - Does the setting affect credentials, persistence, batching, integrations, output, or developer convenience?
 - What does a developer verify after changing it?
 
-## Success Criteria
+## Reader Outcomes
 - Readers know when to configure this area and when they can ignore it.
 - Readers understand the consequence of a wrong value.
 - Readers can connect the setting to a visible command result, runtime behavior, or integration.
 ## Configuration Surface
 Configuration is easiest to understand when each setting is tied to the behavior it controls. The tables below collect the relevant files and environment variables after the mental model, so readers can connect the concept to the concrete setup surface.
 ### Files
-No directly related configuration files were detected for this page.
+No directly related configuration files are associated with this page.
 ### Environment Variables
 - `BATCH_SIZE` (default: `1000`)
 - `CONCURRENT_BATCHES` (default: `5`)
@@ -49,37 +49,30 @@ No directly related configuration files were detected for this page.
 - `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
 ## How to Reason About This Config
 - Identify whether the option affects security, runtime mounting, data access, or presentation.
-- Prefer examples that use the same names and defaults found in the repository evidence.
+- Prefer examples that use the same names and defaults found in the repository.
 - Call out adapter-specific behavior instead of implying every setting applies to every framework.
 ## Validation Checklist
 - Keep config examples aligned with source defaults and runtime validation.
 - Mention whether a setting is required, optional, or only needed for a specific adapter.
 - Update this page when config object names, env vars, or supported providers change.
-## Operational Notes
-- The concept comes before the file paths, so readers understand the workflow before they inspect implementation evidence.
-- Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
-- Maintainer details live in the reference section so the main page stays useful to product readers.
+## Usage Notes
+- The concept comes before the file paths, so readers understand the workflow before they inspect source files.
+- Examples should match the commands, config names, import paths, or behavior present in the repository.
+- Code-level context stays at the bottom so the main page remains useful to product readers.
 - Required settings, optional settings, defaults, and adapter-specific behavior are separated clearly.
 - Credentials, destructive scale controls, and validation expectations are called out before examples.
-## Maintainer Reference
-The sections above are the reader-facing explanation. Use these references only when you need to verify the source of a claim or update the implementation behind the page.
+## Source Reference
+Use these links when you need to verify behavior, update examples, or trace a public name back to the code that owns it.
 
-### Implementation Map
+### Key Files
 - `env.example` - Example project file that shows how the capability is wired in a real framework setup.
-- `src/batch-seeder.ts` - Evidence file that contributes to the implementation understanding for this page.
-- `src/config.ts` - Evidence file that contributes to the implementation understanding for this page.
-- `src/index.ts` - Evidence file that contributes to the implementation understanding for this page.
-- `src/seeder.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `src/batch-seeder.ts` - Repository file related to this page.
+- `src/config.ts` - Repository file related to this page.
+- `src/index.ts` - Repository file related to this page.
+- `src/seeder.ts` - Repository file related to this page.
 
-### Source Details
+### Public Names and Routes
 - `src/batch-seeder.ts`: language TypeScript; exports `BatchSeeder`; env `DEBUG`
 - `src/config.ts`: language TypeScript; exports `config`, `Config`, `validateConfig`; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEFAULT_PASSWORD`, `EMAIL_DOMAIN`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_URL`
 - `src/index.ts`: language TypeScript; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEBUG`, `TOTAL_USERS`; flags `--batch`, `--batch=NUMBER`, `--concurrent`, `--concurrent=N`, `--debug`, `--help`
 - `src/seeder.ts`: language TypeScript; exports `AuthUserSeeder`; env `DEBUG`
-
-### Evidence
-- `env.example`
-- `src/batch-seeder.ts`
-- `src/config.ts`
-- `src/index.ts`
-- `src/seeder.ts`
