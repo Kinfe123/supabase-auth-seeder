@@ -1,0 +1,86 @@
+---
+title: "Supabase Auth Seeder"
+description: "Overview for Supabase Auth Seeder."
+order: 0
+---
+
+# Supabase Auth Seeder
+
+A library focused on supabase, seeding, auth, users.
+## Product Story
+Supabase Auth Seeder is documented as a product with capabilities, workflows, configuration decisions, and integration surfaces. These pages are organized so a reader can understand the purpose of the project before they need to inspect source files.
+## Reader Paths
+- Start with the overview, quickstart, and installation pages to understand the repository before drilling into implementation details.
+- Use configuration pages for detected runtime settings, environment files, deployment files, database files, or product config.
+- Use API reference pages after the mental model is clear and you need routes, commands, adapters, exports, or type contracts.
+## Knowledge Model
+Each page answers four questions: what the concept is, why it matters, how a developer or operator uses it, and where maintainers can verify the implementation. File paths and exports are kept as supporting evidence rather than the main explanation.
+## Documentation Map
+- Get Started: [Supabase Auth Seeder](/docs) - Core landing page for the docs app.
+- Get Started: [Quickstart](/docs/quickstart) - Core first-run workflow.
+- Get Started: [Installation](/docs/installation) - Core install and configuration workflow.
+- Configuration: [Configuration](/docs/configuration) - Section index generated so nested repository-specific pages are visible in the sidebar.
+- Configuration: [Environment Variables](/docs/configuration/environment) - Detected configuration evidence with confidence 0.90.
+- API Reference: [API Reference](/docs/api) - Section index generated so nested repository-specific pages are visible in the sidebar.
+- API Reference: [CLI](/docs/api/cli) - Section index generated so nested repository-specific pages are visible in the sidebar.
+- API Reference: [Public Exports](/docs/api/exports) - Detected api evidence with confidence 0.88.
+- API Reference: [Start Command](/docs/api/cli/start) - Detected api evidence with confidence 0.92.
+## Maintainer Snapshot
+- Project type: `library`
+- Package name: `supabase-auth-seeder`
+- Source entrypoints: `src/index.ts`
+- Bootstrap evidence: `README.md`, `package.json`, `env.example`, `src/batch-seeder.ts`, `src/config.ts`, `src/index.ts`, `src/seeder.ts`, `src/conservative-seeder.ts`, `src/utils.ts`
+## Core Capabilities
+- Environment Variables: Environment variable documentation explains which runtime values the project expects, where those values are read, what each variable controls, and what developers should verify before running previews, workers, or production deployments. Key concepts: environment variables, runtime secrets, configuration files, deployment values.
+## Runtime and Adapter Coverage
+No framework-specific adapter or runtime files were detected.
+## Language Coverage
+- TypeScript: 6 analyzed source files
+## Config Files
+- `package.json` (package) - Package metadata, scripts, dependencies, and exports.
+## Available Commands
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
+## Configuration Surface
+- `BATCH_SIZE` (default: `1000`)
+- `CONCURRENT_BATCHES` (default: `5`)
+- `DEBUG`
+- `DEFAULT_PASSWORD` (default: `password123`)
+- `EMAIL_DOMAIN` (default: `example.com`) - Optional: Custom domain for emails
+- `SUPABASE_SERVICE_ROLE_KEY` (default: `your_service_role_key`)
+- `SUPABASE_URL` (default: `your_supabase_project_url`) - Supabase Configuration
+- `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
+## Dependencies
+- `@supabase/supabase-js` (dependency): `^2.38.4`
+- `@types/node` (devDependency): `^20.10.0`
+- `@types/progress` (devDependency): `^2.0.7`
+- `chalk` (dependency): `^4.1.2`
+- `dotenv` (dependency): `^16.3.1`
+- `progress` (dependency): `^2.0.3`
+- `tsx` (devDependency): `^4.6.0`
+- `typescript` (devDependency): `^5.3.0`
+## README Sections
+No README sections were detected.
+## Named Exports
+- `AuthUserSeeder`
+- `BatchSeeder`
+- `calculateETA`
+- `calculatePercentage`
+- `config`
+- `Config`
+- `ConservativeSeeder`
+- `delay`
+- `formatNumber`
+- `generateUserBatch`
+- `UserData`
+- `validateConfig`
+## CLI Options
+- `--batch=NUMBER`: Override batch size')
+- `--concurrent=N`: Override number of concurrent batches')
+- `--debug`: Enable debug logging')
+- `--help`
+- `--users=NUMBER`: Override total number of users to seed')

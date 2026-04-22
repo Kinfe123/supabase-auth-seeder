@@ -1,0 +1,56 @@
+---
+title: "Public Exports"
+description: "The package exposes public imports, declarations, or exported integration helpers."
+order: 70
+---
+
+# Public Exports
+
+The package exposes public imports, declarations, or exported integration helpers.
+## What This Is
+Public export documentation explains which imports are intended for developers, what each exported helper or type represents, and how those exports connect to the runtime behavior documented elsewhere.
+## Why It Matters
+Public Exports matters because it is part of how Supabase Auth Seeder turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses implementation evidence as supporting context.
+## Core Concepts
+- package exports
+- public imports
+- types
+- integration helpers
+- developer API
+## Typical Workflow
+1. Identify package exports and source declarations that form the public surface.
+2. Group exports by the workflow or runtime behavior they support.
+3. Document import paths, responsibilities, and related configuration before listing raw symbols.
+## Public Import Paths
+No package export evidence was attached to this page.
+## Source Surface
+- `src/config.ts` exposes `config`, `Config`, `validateConfig`.
+- `src/batch-seeder.ts` exposes `BatchSeeder`.
+- `src/conservative-seeder.ts` exposes `ConservativeSeeder`.
+- `src/seeder.ts` exposes `AuthUserSeeder`.
+- `src/utils.ts` exposes `calculateETA`, `calculatePercentage`, `delay`, `formatNumber`, `generateUserBatch`, `UserData`.
+## How To Read This Page
+Use this page as the import map. It should explain stable developer entrypoints, while feature, setup, and configuration pages explain the workflows those entrypoints support.
+## Maintainer Reference
+The sections above are the reader-facing explanation. Use these references only when you need to verify the source of a claim or update the implementation behind the page.
+
+### Implementation Map
+- `src/batch-seeder.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `src/config.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `src/conservative-seeder.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `src/seeder.ts` - Evidence file that contributes to the implementation understanding for this page.
+- `src/utils.ts` - Evidence file that contributes to the implementation understanding for this page.
+
+### Source Details
+- `src/batch-seeder.ts`: language TypeScript; exports `BatchSeeder`; env `DEBUG`
+- `src/config.ts`: language TypeScript; exports `config`, `Config`, `validateConfig`; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEFAULT_PASSWORD`, `EMAIL_DOMAIN`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_URL`
+- `src/conservative-seeder.ts`: language TypeScript; exports `ConservativeSeeder`
+- `src/seeder.ts`: language TypeScript; exports `AuthUserSeeder`; env `DEBUG`
+- `src/utils.ts`: language TypeScript; exports `calculateETA`, `calculatePercentage`, `delay`, `formatNumber`, `generateUserBatch`, `UserData`
+
+### Evidence
+- `src/batch-seeder.ts`
+- `src/config.ts`
+- `src/conservative-seeder.ts`
+- `src/seeder.ts`
+- `src/utils.ts`
