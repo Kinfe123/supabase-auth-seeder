@@ -7,43 +7,18 @@ order: 70
 # Public Exports
 
 The package exposes public imports, declarations, or exported integration helpers.
-## What This Is
-Public export documentation explains which imports are intended for developers, what each exported helper or type represents, and how those exports connect to the runtime behavior documented elsewhere.
-## Why It Matters
-Public Exports matters because it is part of how Supabase Auth Seeder turns repository behavior into a usable developer or operator workflow. This page gives readers the mental model first, then uses code-level details as supporting context.
-## Core Concepts
-- package exports
-- public imports
-- types
-- integration helpers
-- developer API
-## Typical Workflow
-1. Identify package exports and source declarations that form the public surface.
-2. Group exports by the workflow or runtime behavior they support.
-3. Document import paths, responsibilities, and related configuration before listing raw symbols.
-## Public Import Paths
-No package export evidence was attached to this page.
-## Source Surface
-- `src/config.ts` exposes `config`, `Config`, `validateConfig`.
-- `src/batch-seeder.ts` exposes `BatchSeeder`.
-- `src/conservative-seeder.ts` exposes `ConservativeSeeder`.
-- `src/seeder.ts` exposes `AuthUserSeeder`.
-- `src/utils.ts` exposes `calculateETA`, `calculatePercentage`, `delay`, `formatNumber`, `generateUserBatch`, `UserData`.
-## How To Read This Page
-Use this page as the import map. It should explain stable developer entrypoints, while feature, setup, and configuration pages explain the workflows those entrypoints support.
-## Source Reference
-Use these links when you need to verify behavior, update examples, or trace a public name back to the code that owns it.
-
-### Key Files
-- `src/batch-seeder.ts` - Repository file related to this page.
-- `src/config.ts` - Repository file related to this page.
-- `src/conservative-seeder.ts` - Repository file related to this page.
-- `src/seeder.ts` - Repository file related to this page.
-- `src/utils.ts` - Repository file related to this page.
-
-### Public Names and Routes
-- `src/batch-seeder.ts`: language TypeScript; exports `BatchSeeder`; env `DEBUG`
-- `src/config.ts`: language TypeScript; exports `config`, `Config`, `validateConfig`; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEFAULT_PASSWORD`, `EMAIL_DOMAIN`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_URL`
-- `src/conservative-seeder.ts`: language TypeScript; exports `ConservativeSeeder`
-- `src/seeder.ts`: language TypeScript; exports `AuthUserSeeder`; env `DEBUG`
-- `src/utils.ts`: language TypeScript; exports `calculateETA`, `calculatePercentage`, `delay`, `formatNumber`, `generateUserBatch`, `UserData`
+## What To Import
+Use this page when you already know you need to integrate Supabase Auth Seeder from `supabase-auth-seeder`, but you need to choose the right entrypoint. Start with the main package for shared helpers, use framework subpaths when mounting the product in an app, and use config subpaths when you are typing or loading runtime configuration.
+## Common Imports
+```ts
+import { config, Config } from "supabase-auth-seeder";
+```
+## Choose an Import Path
+| Import path | When to use it | Common imports |
+| --- | --- | --- |
+| `supabase-auth-seeder` | Use this for top-level helpers, shared types, and runtime utilities from Supabase Auth Seeder. | `config`, `Config`, `validateConfig` |
+## How To Decide
+- Choose the main package entrypoint for shared helpers, product-level types, and top-level setup utilities.
+- Choose a framework entrypoint when the import is used inside that framework's route, handler, plugin, or server integration.
+- Choose a configuration entrypoint when the code is reading, validating, or typing the product configuration.
+- If two paths look similar, prefer the narrowest path that matches the file you are editing.
