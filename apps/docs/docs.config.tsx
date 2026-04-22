@@ -26,7 +26,7 @@ export default defineDocs({
           "slug": "cli",
           "children": [
             {
-              "slug": "start"
+              "slug": "seed"
             }
           ]
         },

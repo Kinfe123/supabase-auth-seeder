@@ -23,17 +23,17 @@ Environment Variables matters because it is part of how Supabase Auth Seeder tur
 ## Detailed Configuration Model
 Environment Variables controls behavior rather than UI copy. The important questions are what decision this configuration helps a developer make, what happens when it is absent, and what runtime behavior changes when it is enabled. This page keeps the mental model ahead of the raw files that mention the setting.
 
-For Supabase Auth Seeder, configuration usually answers practical questions: who can access the product, where it is mounted, which runtime services it depends on, and what optional capabilities are enabled. Each setting is documented in relation to one of those questions.
+For Supabase Auth Seeder, configuration usually answers practical questions: which services the command or runtime connects to, which secrets or URLs must be present, which defaults are safe for local use, and which values change scale, safety, or output. Each setting is documented in relation to one of those questions.
 
 ## Decision Points
 - Is the setting required for every installation, or only for a specific framework, adapter, or deployment mode?
-- Does the setting affect security, persistence, presentation, integrations, or developer convenience?
+- Does the setting affect credentials, persistence, batching, integrations, output, or developer convenience?
 - What does a developer verify after changing it?
 
 ## Success Criteria
 - Readers know when to configure this area and when they can ignore it.
 - Readers understand the consequence of a wrong value.
-- Readers can connect the setting to a visible product behavior or runtime integration.
+- Readers can connect the setting to a visible command result, runtime behavior, or integration.
 ## Configuration Surface
 Configuration is easiest to understand when each setting is tied to the behavior it controls. The tables below collect the relevant files and environment variables after the mental model, so readers can connect the concept to the concrete setup surface.
 ### Files
@@ -60,7 +60,7 @@ No directly related configuration files were detected for this page.
 - Examples stay grounded in detected commands, config names, import paths, or behavior from the repository.
 - Maintainer details live in the reference section so the main page stays useful to product readers.
 - Required settings, optional settings, defaults, and adapter-specific behavior are separated clearly.
-- Security impact and validation expectations are called out before examples.
+- Credentials, destructive scale controls, and validation expectations are called out before examples.
 ## Maintainer Reference
 The sections above are the reader-facing explanation. Use these references only when you need to verify the source of a claim or update the implementation behind the page.
 
