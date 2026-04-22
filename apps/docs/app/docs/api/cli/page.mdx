@@ -1,18 +1,20 @@
 ---
 title: "CLI"
-description: "Command and flag references generated from detected CLI entrypoints."
+description: "Commands and flags for running repository workflows from the terminal."
 order: 60
 ---
 
 # CLI
 
-Command and flag references generated from detected CLI entrypoints.
+Use this section to find the CLI pages for Supabase Auth Seeder.
 
-## How This Section Was Built
-This sidebar section is generated from repository evidence, not from a static template. The docs engine adds a section only when one or more child pages are backed by code, config, README, package export, route, CLI, or environment evidence.
+## When to Use This Section
+Use this section when you need to run Supabase Auth Seeder from the terminal. The pages here explain command purpose, required configuration, supported flags, safe defaults, and what to verify after the command finishes.
 
-## Pages
+## Available Pages
 - [Seed Command](/docs/api/cli/seed) - The CLI exposes a seeding workflow and runtime flags.
 
-## Evidence Used
-- `src/index.ts`
+## Reading Order
+- Start with the command purpose before copying flags.
+- Check required environment variables before running commands that create, mutate, or seed data.
+- Prefer the smallest safe script first, then increase scale or concurrency after verification.

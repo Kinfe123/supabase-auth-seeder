@@ -1,22 +1,20 @@
 ---
 title: "Configuration"
-description: "Runtime, environment, database, deployment, and framework configuration pages detected from the repository."
+description: "Runtime values, environment variables, deployment settings, and framework configuration."
 order: 30
 ---
 
 # Configuration
 
-Runtime, environment, database, deployment, and framework configuration pages detected from the repository.
+Use this section to find the configuration pages for Supabase Auth Seeder.
 
-## How This Section Was Built
-This sidebar section is generated from repository evidence, not from a static template. The docs engine adds a section only when one or more child pages are backed by code, config, README, package export, route, CLI, or environment evidence.
+## When to Use This Section
+Use this section before running Supabase Auth Seeder in a new environment. It explains which values need to exist, what behavior they control, and how to reason about credentials, defaults, deployment settings, and scale controls.
 
-## Pages
+## Available Pages
 - [Environment Variables](/docs/configuration/environment) - The repository reads environment variables or provides environment example files.
 
-## Evidence Used
-- `env.example`
-- `src/batch-seeder.ts`
-- `src/config.ts`
-- `src/index.ts`
-- `src/seeder.ts`
+## Reading Order
+- Identify which values are required for every run and which are optional overrides.
+- Treat credentials and destructive scale controls as production-sensitive settings.
+- After changing configuration, rerun the smallest workflow that proves the new value is being used.
