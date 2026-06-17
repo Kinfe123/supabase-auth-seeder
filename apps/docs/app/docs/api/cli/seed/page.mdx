@@ -1,0 +1,51 @@
+---
+title: "Seed Command"
+description: "The CLI exposes a seeding workflow and runtime flags."
+order: 80
+---
+
+# Seed Command
+
+The CLI exposes a seeding workflow and runtime flags.
+## Command Purpose
+The seed command runs the repository's data creation workflow. This page explains which script to run, which environment values must exist first, and which flags change the amount of work, batching, concurrency, or debug output.
+## How to Run It
+Run `bun run seed` from the repository root after dependencies and required environment values are ready.
+Install dependencies first with `bun install`.
+## What the Command Depends On
+The command reads environment-backed configuration. Set these values before using large runs or automation.
+- `BATCH_SIZE` (default: `1000`)
+- `CONCURRENT_BATCHES` (default: `5`)
+- `DEBUG`
+- `DEFAULT_PASSWORD` (default: `password123`)
+- `EMAIL_DOMAIN` (default: `example.com`) - Optional: Custom domain for emails
+- `SUPABASE_SERVICE_ROLE_KEY` (default: `your_service_role_key`)
+- `SUPABASE_URL` (default: `your_supabase_project_url`) - Supabase Configuration
+- `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
+## Flags and Options
+Use flags to override defaults for a specific run. Prefer the default script first, then add flags when you need a different scale, concurrency level, target, or debug mode.
+- `--batch=NUMBER`: Override batch size
+- `--concurrent=N`: Override number of concurrent batches
+- `--debug`: Enable debug logging
+- `--help`
+- `--users=NUMBER`: Override total number of users to seed
+## Script Inventory
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
+## Verification Checklist
+- Confirm required environment values are present before running the command.
+- Start with the smallest safe command or script before increasing scale.
+- Use `--help` when available to confirm the flags supported by the current version.
+- Check the command output or downstream service to confirm the expected side effect happened.
+## Source Reference
+Use these links when you need to verify behavior, update examples, or trace a public name back to the code that owns it.
+
+### Key Files
+- `src/index.ts` - Repository file related to this page.
+
+### Public Names and Routes
+- `src/index.ts`: language TypeScript; env `BATCH_SIZE`, `CONCURRENT_BATCHES`, `DEBUG`, `TOTAL_USERS`; flags `--batch`, `--batch=NUMBER`, `--concurrent`, `--concurrent=N`, `--debug`, `--help`

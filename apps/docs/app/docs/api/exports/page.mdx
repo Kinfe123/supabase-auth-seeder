@@ -1,0 +1,24 @@
+---
+title: "Public Exports"
+description: "The package exposes public imports, declarations, or exported integration helpers."
+order: 70
+---
+
+# Public Exports
+
+The package exposes public imports, declarations, or exported integration helpers.
+## What To Import
+Use this page when you already know you need to integrate Supabase Auth Seeder from `supabase-auth-seeder`, but you need to choose the right entrypoint. Start with the main package for shared helpers, use framework subpaths when mounting the product in an app, and use config subpaths when you are typing or loading runtime configuration.
+## Common Imports
+```ts
+import { config, Config } from "supabase-auth-seeder";
+```
+## Choose an Import Path
+| Import path | When to use it | Common imports |
+| --- | --- | --- |
+| `supabase-auth-seeder` | Use this for top-level helpers, shared types, and runtime utilities from Supabase Auth Seeder. | `config`, `Config`, `validateConfig` |
+## How To Decide
+- Choose the main package entrypoint for shared helpers, product-level types, and top-level setup utilities.
+- Choose a framework entrypoint when the import is used inside that framework's route, handler, plugin, or server integration.
+- Choose a configuration entrypoint when the code is reading, validating, or typing the product configuration.
+- If two paths look similar, prefer the narrowest path that matches the file you are editing.

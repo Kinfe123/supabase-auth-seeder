@@ -1,0 +1,85 @@
+---
+title: "Supabase Auth Seeder"
+description: "Overview for Supabase Auth Seeder."
+order: 0
+---
+
+# Supabase Auth Seeder
+
+A library focused on supabase, seeding, auth, users.
+## Product Story
+Supabase Auth Seeder is documented as a product with capabilities, workflows, configuration decisions, and integration surfaces. These pages are organized so a reader can understand the purpose of the project before they need to inspect source files.
+## Reader Paths
+- Start with the overview, quickstart, and installation pages to understand the repository before drilling into implementation details.
+- Use configuration pages for runtime settings, environment files, deployment files, database files, or product config.
+- Use API reference pages after the mental model is clear and you need routes, commands, adapters, exports, or type contracts.
+## Documentation Model
+Each page answers four questions: what the concept is, why it matters, how a developer or operator uses it, and where the related source files live. File paths and exports are supporting context, not the main explanation.
+## Documentation Map
+- Get Started: [Supabase Auth Seeder](/docs) - Overview for Supabase Auth Seeder.
+- Get Started: [Quickstart](/docs/quickstart) - Run Supabase Auth Seeder for the first time.
+- Get Started: [Installation](/docs/installation) - Install and configure Supabase Auth Seeder.
+- Configuration: [Configuration](/docs/configuration) - Runtime values, environment variables, deployment settings, and framework configuration.
+- Configuration: [Environment Variables](/docs/configuration/environment) - The repository reads environment variables or provides environment example files.
+- API Reference: [API Reference](/docs/api) - Concrete developer-facing surfaces: commands, exports, adapters, routes, and type contracts.
+- API Reference: [CLI](/docs/api/cli) - Commands and flags for running repository workflows from the terminal.
+- API Reference: [Public Exports](/docs/api/exports) - The package exposes public imports, declarations, or exported integration helpers.
+- API Reference: [Seed Command](/docs/api/cli/seed) - The CLI exposes a seeding workflow and runtime flags.
+## Project Snapshot
+- Project type: `library`
+- Package name: `supabase-auth-seeder`
+- Source entrypoints: `src/index.ts`
+## Core Capabilities
+No high-confidence product capabilities are available yet.
+## Runtime and Adapter Coverage
+No framework-specific adapter or runtime files were found.
+## Language Coverage
+- TypeScript: 6 analyzed source files
+## Config Files
+- `package.json` (package) - Package metadata, scripts, dependencies, and exports.
+## Available Commands
+- `seed`: `tsx src/index.ts`
+- `seed:batch`: `tsx src/batch-seeder.ts`
+- `seed:conservative`: `tsx src/conservative-seeder.ts`
+- `seed:small`: `tsx src/index.ts --users=1000`
+- `build`: `tsc`
+- `dev`: `tsx watch src/index.ts`
+## Configuration Surface
+- `BATCH_SIZE` (default: `1000`)
+- `CONCURRENT_BATCHES` (default: `5`)
+- `DEBUG`
+- `DEFAULT_PASSWORD` (default: `password123`)
+- `EMAIL_DOMAIN` (default: `example.com`) - Optional: Custom domain for emails
+- `SUPABASE_SERVICE_ROLE_KEY` (default: `your_service_role_key`)
+- `SUPABASE_URL` (default: `your_supabase_project_url`) - Supabase Configuration
+- `TOTAL_USERS` (default: `7000000`) - Seeding Configuration
+## Dependencies
+- `@supabase/supabase-js` (dependency): `^2.38.4`
+- `@types/node` (devDependency): `^20.10.0`
+- `@types/progress` (devDependency): `^2.0.7`
+- `chalk` (dependency): `^4.1.2`
+- `dotenv` (dependency): `^16.3.1`
+- `progress` (dependency): `^2.0.3`
+- `tsx` (devDependency): `^4.6.0`
+- `typescript` (devDependency): `^5.3.0`
+## README Sections
+No README sections were found.
+## Named Exports
+- `AuthUserSeeder`
+- `BatchSeeder`
+- `calculateETA`
+- `calculatePercentage`
+- `config`
+- `Config`
+- `ConservativeSeeder`
+- `delay`
+- `formatNumber`
+- `generateUserBatch`
+- `UserData`
+- `validateConfig`
+## CLI Options
+- `--batch=NUMBER`: Override batch size
+- `--concurrent=N`: Override number of concurrent batches
+- `--debug`: Enable debug logging
+- `--help`
+- `--users=NUMBER`: Override total number of users to seed
